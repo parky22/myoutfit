@@ -9,7 +9,7 @@ module.exports = db.define('clothing', {
   },
 
   color: {
-    type: Sequelize.STRING,
+    type: Sequelize.ARRAY(Sequelize.STRING),
     allowNull: false,
     set: (colorInput) => {
       this.setDataValue('color', colorInput.toLowerCase());

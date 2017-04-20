@@ -11,8 +11,10 @@ const PORT = process.env.PORT || 8080;
 const app = express();
 module.exports = app;
 
+
+
 if (process.env.NODE_ENV === 'development')
-  require('../secrets');
+  require('../.myoutfit.env.js');
 
 passport.serializeUser((user, done) =>
   done(null, user.id));

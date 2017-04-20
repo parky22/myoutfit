@@ -1,7 +1,7 @@
 {
-  "name": "boilermaker",
+  "name": "myoutfit",
   "version": "1.0.0",
-  "description": "Some boilerplate code to get you started - get shakin'!",
+  "description": "Figure out what to wear for the day!",
   "main": "index.js",
   "scripts": {
     "start": "webpack -w & nodemon server",

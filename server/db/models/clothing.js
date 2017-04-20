@@ -1,7 +1,7 @@
 const Sequelize = require('sequelize');
 const db = require('../db');
 
-module.exports = db.define('clothe', {
+module.exports = db.define('clothing', {
   clothingType: {
     type: Sequelize.ENUM,
     values: ['shirt', 'pants', 'other'],
@@ -14,6 +14,11 @@ module.exports = db.define('clothe', {
     set: (colorInput) => {
       this.setDataValue('color', colorInput.toLowerCase());
     }
+  },
+
+  image: {
+    type: Sequelize.STRING,
+    allowNull: false
   },
 
   tags: {
@@ -32,7 +37,7 @@ module.exports = db.define('clothe', {
             $contains: tag
           }
         }
-      })
+      });
     }
   }
 });

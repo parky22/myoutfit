@@ -11,10 +11,7 @@ const PORT = process.env.PORT || 8080;
 const app = express();
 module.exports = app;
 
-
-
-if (process.env.NODE_ENV === 'development')
-  require('../.myoutfit.env.js');
+if (process.env.NODE_ENV === 'development') require('../.myoutfit.env.js');
 
 passport.serializeUser((user, done) =>
   done(null, user.id));
@@ -24,9 +21,9 @@ passport.deserializeUser((id, done) =>
     .then(user => done(null, user))
     .catch(done));
 
-store.sync()
-  .then(() => db.sync()
-  .then(() => app
+
+const runApp = () => {
+  app
     .use(morgan('dev'))
     .use(express.static(path.join(__dirname, '..', 'public')))
     .use(bodyParser.json())
@@ -47,7 +44,18 @@ store.sync()
       res.sendFile(path.join(__dirname, '..', 'public/index.html')))
     .use((err, req, res, next) =>
       res.status(err.status || 500).send(err.message || 'Internal server error.'))
-    .listen(PORT, () =>
-      console.log(`Mixing it up on port ${PORT}`))
-  )
-);
+}
+
+// if 'npm start' is being run, server will listen; otherwise test is running.
+if (require.main === module) {
+  store.sync()
+    .then(() => db.sync()
+      .then(() => {
+        runApp();
+        app.listen(PORT, () =>
+          console.log(`Mixing it up on port ${PORT}`))
+      })
+    );
+} else {
+  runApp();
+}

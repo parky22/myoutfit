@@ -11,8 +11,9 @@ module.exports = db.define('clothing', {
   color: {
     type: Sequelize.ARRAY(Sequelize.STRING),
     allowNull: false,
-    set: (colorInput) => {
-      this.setDataValue('color', colorInput.toLowerCase());
+    set (inputColors) { // method notation in object literals like methods in class; retains normal 'this' context.
+      const lowerCasedColors = inputColors.map(color => color.toLowerCase());
+      this.setDataValue('color', lowerCasedColors);
     }
   },
 
@@ -26,11 +27,11 @@ module.exports = db.define('clothing', {
   }
 }, {
   classMethods: {
-    getByColor: (color) => {
+    getByColor (color) {
       return this.findAll({ where: { color } })
     },
 
-    getByTag: (tag) => {
+    getByTag (tag) {
       return this.findAll({
         where: {
           tags: {

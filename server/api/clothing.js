@@ -10,9 +10,16 @@ router.get('/', (req, res, next) => {
     .catch(next);
 });
 
+router.get('/:clothingId', (req, res, next) => {
+  Clothings.findById(req.params.clothingId)
+    .then(foundClothing => res.json(foundClothing))
+    .catch(next);
+})
+
 router.post('/', (req, res, next) => {
   Clothings.findOrCreate(req.body)
-    .spread((createdClothing, _createdBool) => res.status(201).json(createdClothing))
+    .then(res => console.log(res))
+    //.spread((createdClothing, _createdBool) => res.status(201).json(createdClothing))
     .catch(next);
 });
 

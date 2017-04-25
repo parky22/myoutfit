@@ -9,7 +9,7 @@ const Main = props => {
   const loggedIn = !!user.id;
 
   return (
-    <div>
+    <div className="container">
       <h1>MYOUTFIT</h1>
       { loggedIn ?
           <nav>

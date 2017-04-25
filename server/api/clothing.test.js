@@ -59,6 +59,17 @@ describe('/api/clothing', () => {
       });
   });
 
+  it('GET clothing by ID', () => {
+    return request(app)
+      .get(`/api/clothing/${pantsId}`)
+      .expect(200)
+      .then(res => {
+        expect(res.body.clothingType).to.equal(pants.clothingType);
+        expect(res.body.color[0]).to.equal(pants.color[0]);
+        expect(res.body.tags.length).to.equal(pants.tags.length);
+      });
+  });
+
   it('POST a piece of clothing', () => {
     return request(app)
       .post('/api/clothing')

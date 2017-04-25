@@ -1,1 +1,0 @@
-Use React-Toastr for console.logging errors on the front end

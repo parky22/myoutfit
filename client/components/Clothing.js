@@ -1,11 +1,14 @@
 import React from 'react';
 
+
+
 const Clothing = props => {
 
   return (
     <div>
-      <h1> Clothing image will go here </h1>
-      <h3> {props.text} </h3>
+      <h3>{props.clothing.clothingType}</h3>
+      <img src={props.clothing.image} />
+      <h3> {props.clothing.tags.join(', ')} </h3>
     </div>
   );
 }

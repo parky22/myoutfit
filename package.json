@@ -4,7 +4,8 @@
   "description": "Figure out what to wear for the day!",
   "main": "index.js",
   "scripts": {
-    "start": "webpack -w & nodemon server",
+    "build-watch": "webpack -w",
+    "start": "webpack & nodemon server",
     "start-server": "nodemon server",
     "build-client": "webpack",
     "test": "mocha --watch server/**/*test.js"

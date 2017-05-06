@@ -17,9 +17,8 @@ router.get('/:clothingId', (req, res, next) => {
 })
 
 router.post('/', (req, res, next) => {
-  Clothings.findOrCreate(req.body)
-    .then(res => console.log(res))
-    //.spread((createdClothing, _createdBool) => res.status(201).json(createdClothing))
+  Clothings.create(req.body)
+    .then(createdClothing => res.status(201).json(createdClothing))
     .catch(next);
 });
 

@@ -5,22 +5,26 @@ export default props => {
   const { name, displayName, handleSubmit, error } = props;
 
   return (
-    <div>
-      <form onSubmit={handleSubmit} name={name}>
-        <div>
-          <label htmlFor="email"><small>Email</small></label>
-          <input name="email" type="text" />
+    <div className="row">
+      <form onSubmit={handleSubmit} name={name} className="col s12">
+        <div className="row">
+          <div className="input-field col s12">
+            <label htmlFor="email"><small>Email</small></label>
+            <input name="email" type="text" />
+          </div>
+        </div>
+        <div className="row">
+          <div className="input-field col s12">
+            <label htmlFor="password"><small>Password</small></label>
+            <input name="password" type="password" />
+          </div>
         </div>
         <div>
-          <label htmlFor="password"><small>Password</small></label>
-          <input name="password" type="password" />
+          <button type="submit">{displayName}</button>
         </div>
-        <div>
-          <button type="submit">{ displayName }</button>
-        </div>
-        { error &&  <div> { error.response.data } </div> }
+        {error && <div> {error.response.data} </div>}
       </form>
-      <a href="/auth/google">{ displayName } with Google</a>
+      <a href="/auth/google">{displayName} with Google</a>
     </div>
   );
 };

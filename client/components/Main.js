@@ -2,6 +2,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router';
 import { logout } from '../reducer/user';
+import NavBar from './NavBar';
+import Footer from './Footer';
 
 const Main = props => {
 
@@ -10,19 +12,9 @@ const Main = props => {
 
   return (
     <div className="container">
-      <h1>MYOUTFIT</h1>
-      { loggedIn ?
-          <nav>
-            <Link to="/home">Home</Link>
-            <a href="" onClick={handleClick}>Logout</a>
-          </nav> :
-          <nav>
-            <Link to="/login">Login</Link>
-            <Link to="/signup">Sign Up</Link>
-          </nav>
-      }
-      <hr />
-      { children }
+      <NavBar loggedIn={loggedIn} handleClick={handleClick} />
+      {children}
+      <Footer />
     </div>
   );
 };
@@ -30,7 +22,7 @@ const Main = props => {
 const mapState = ({ user }) => ({ user });
 
 const mapDispatch = dispatch => ({
-  handleClick () {
+  handleClick() {
     dispatch(logout());
   }
 });

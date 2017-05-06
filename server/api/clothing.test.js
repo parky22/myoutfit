@@ -66,6 +66,7 @@ describe('/api/clothing', () => {
       .then(res => {
         expect(res.body.clothingType).to.equal(pants.clothingType);
         expect(res.body.color[0]).to.equal(pants.color[0]);
+        expect(res.body.image).to.equal(pants.image);
         expect(res.body.tags.length).to.equal(pants.tags.length);
       });
   });
@@ -75,7 +76,12 @@ describe('/api/clothing', () => {
       .post('/api/clothing')
       .send(newShirt)
       .expect(201)
-      .then(res => expect(res.body).to.equal(newShirt))
+      .then(res => {
+        expect(res.body.clothingType).to.equal(newShirt.clothingType);
+        expect(res.body.color[0]).to.equal(newShirt.color[0]);
+        expect(res.body.image).to.equal(newShirt.image);
+        expect(res.body.tags.length).to.equal(newShirt.tags.length);
+      })
       .then(() => {
         Clothing.findAll()
           .then(clothes => expect(clothes.length).to.equal(4));

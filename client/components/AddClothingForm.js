@@ -5,11 +5,13 @@ import { connect } from 'react-redux';
 const AddClothingForm = props => {
 
   return (
-    <h1> IN ADD CLOTHING FORM </h1>
+    <div>
+      <h1> IN ADD CLOTHING FORM </h1>
+    </div>
   );
 };
 
-export default AddClothingForm;
+export default connect()(AddClothingForm);
 
 
 //  <div className="row">

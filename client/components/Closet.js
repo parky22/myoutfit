@@ -2,6 +2,7 @@ import React from 'react';
 import Clothing from './Clothing';
 
 const Closet = props => {
+  console.log('props', props);
   return (
     <div>
       {

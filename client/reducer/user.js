@@ -1,22 +1,26 @@
 import axios from 'axios';
 import { browserHistory } from 'react-router';
 
+// CONSTANTS
 const GET_USER = 'GET_USER';
 const REMOVE_USER = 'REMOVE_USER';
 
 const defaultUser = {};
 
+// ACTION CREATORS
 const getUser = user => ({ type: GET_USER, user });
 const removeUser = () => ({ type: REMOVE_USER });
 
-export const me = () =>
-  dispatch =>
+// THUNK ACTION CREATORS
+export const me = () => {
+  return dispatch =>
     axios.get('/auth/me')
       .then(res =>
         dispatch(getUser(res.data || defaultUser)));
+}
 
-export const auth = (email, password, method) =>
-  dispatch =>
+export const auth = (email, password, method) => {
+  return dispatch =>
     axios.post(`/auth/${method}`, { email, password })
       .then(res => {
         dispatch(getUser(res.data));
@@ -24,16 +28,19 @@ export const auth = (email, password, method) =>
       })
       .catch(error =>
         dispatch(getUser({ error })));
+}
 
-export const logout = () =>
-  dispatch =>
+export const logout = () => {
+  return dispatch =>
     axios.post('/auth/logout')
       .then(res => {
         dispatch(removeUser());
         browserHistory.push('/login');
       })
       .catch(err => console.log(err));
+}
 
+// REDUCER
 export default function (state = defaultUser, action) {
   switch (action.type) {
     case GET_USER:

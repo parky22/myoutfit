@@ -1,7 +1,5 @@
 import React from 'react';
-import { connect } from 'react-redux';
 
-// not sure why but this isn't showing up.
 const AddClothingForm = props => {
 
   return (
@@ -11,7 +9,7 @@ const AddClothingForm = props => {
   );
 };
 
-export default connect()(AddClothingForm);
+export default AddClothingForm;
 
 
 //  <div className="row">

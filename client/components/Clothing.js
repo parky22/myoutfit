@@ -9,6 +9,6 @@ const Clothing = props => {
       <h3> {props.piece.tags.join(', ')} </h3>
     </div>
   );
-}
+};
 
 export default Clothing;

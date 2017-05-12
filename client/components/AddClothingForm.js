@@ -25,7 +25,7 @@ class AddClothingForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    
+    console.log('Gotta handle submit better than this');
   }
 
   render() {

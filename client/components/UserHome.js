@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router';
 import Clothing from './Clothing';
 import Closet from './Closet';
-
+import { Button, StyledLink } from './style.js'
 /**
  * UserHome will show:
  * 1. Outfit of the day
@@ -20,9 +20,8 @@ const UserHome = props => {
     <div>
       <h3>Welcome, { user.email }</h3>
       <h2> 1. Outfit of the day will show here </h2>
-      <h2> 2. Closet will show all pieces </h2>
-      <h1><Link to="addClothing">Add Clothing</Link></h1>
-      <h1><Link to="closet">Closet</Link></h1>
+      <Button><StyledLink to="addClothing">Add Clothing</StyledLink></Button>
+      <Button primary><StyledLink to="closet">Closet</StyledLink></Button>
     </div>
   );
 }

@@ -4,10 +4,11 @@
   "description": "Figure out what to wear for the day!",
   "main": "index.js",
   "scripts": {
+    "build-client": "webpack",
     "build-watch": "webpack -w",
+    "seed": "node server/db/seed.js",
     "start": "webpack & nodemon server",
     "start-server": "nodemon server",
-    "build-client": "webpack",
     "test": "mocha --watch server/**/*test.js"
   },
   "author": "",
@@ -30,7 +31,8 @@
     "redux": "^3.6.0",
     "redux-logger": "^2.8.1",
     "redux-thunk": "^2.2.0",
-    "sequelize": "^3.30.2"
+    "sequelize": "^3.30.2",
+    "styled-components": "^1.4.6"
   },
   "devDependencies": {
     "babel-core": "^6.22.1",

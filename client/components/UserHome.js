@@ -24,7 +24,7 @@ const UserHome = props => {
       <Button><StyledLink to="closet">Closet</StyledLink></Button>
     </div>
   );
-}
+};
 
 const mapState = ({ user }) => ({ user });
 

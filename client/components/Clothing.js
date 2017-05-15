@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Clothing = props => {
+export default props => {
 
   return (
     <div>
@@ -11,4 +11,3 @@ const Clothing = props => {
   );
 };
 
-export default Clothing;

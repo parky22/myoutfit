@@ -1,7 +1,7 @@
 import React from 'react';
 import Clothing from './Clothing';
 
-const Closet = props => {
+export default props => {
 
   return (
     <div>
@@ -17,4 +17,3 @@ const Closet = props => {
   );
 };
 
-export default Closet;

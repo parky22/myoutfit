@@ -5,6 +5,7 @@ import { logout } from '../reducer/user';
 import NavBar from './NavBar';
 import Footer from './Footer';
 
+
 const Main = props => {
 
   const { children, handleClick, user } = props;

@@ -21,7 +21,7 @@ const UserHome = props => {
       <h3>Welcome, { user.email }</h3>
       <h2> 1. Outfit of the day will show here </h2>
       <Button><StyledLink to="addClothing">Add Clothing</StyledLink></Button>
-      <Button primary><StyledLink to="closet">Closet</StyledLink></Button>
+      <Button><StyledLink to="closet">Closet</StyledLink></Button>
     </div>
   );
 }

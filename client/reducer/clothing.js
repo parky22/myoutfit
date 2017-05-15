@@ -4,16 +4,18 @@ import axios from 'axios';
 const RECEIVE_ALL_CLOTHINGS = 'RECEIVE_ALL_CLOTHINGS';
 
 // ACTION CREATORS
-const receiveAllClothings = (allClothings) => ({ type: RECEIVE_ALL_CLOTHINGS, allClothings})
+const receiveAllClothings = allClothings => ({ type: RECEIVE_ALL_CLOTHINGS, allClothings})
 
 // THUNK ACTION CREATORS
 export const getAllClothings = () => {
   return dispatch =>
-    axios.get('/clothing')
+    axios.get('/api/clothing')
       .then(res => res.data)
       .then(allClothings => {
+        console.log('GOT ALL THE CLOTHES', allClothings);
         dispatch(receiveAllClothings(allClothings));
-      });
+      })
+      .catch(error => console.error(error));
 };
 
 // REDUCER

@@ -9,7 +9,7 @@
     "seed": "node server/db/seed.js",
     "start": "webpack & nodemon server",
     "start-server": "nodemon server",
-    "test": "mocha --watch server/**/*test.js"
+    "test": "mocha --compilers js:babel-register --watch server/**/*test.js client/**/*.test.js"
   },
   "author": "",
   "license": "MIT",
@@ -39,11 +39,15 @@
     "babel-loader": "^6.2.10",
     "babel-preset-es2015": "^6.22.0",
     "babel-preset-react": "^6.22.0",
+    "babel-register": "^6.24.1",
     "chai": "^3.5.0",
     "css-loader": "^0.26.1",
+    "enzyme": "^2.8.2",
     "mocha": "^3.2.0",
     "node-sass": "^4.5.0",
+    "react-test-renderer": "^15.5.4",
     "sass-loader": "^6.0.0",
+    "sinon": "^2.2.0",
     "style-loader": "^0.13.1",
     "supertest": "^3.0.0",
     "webpack": "^2.2.1"

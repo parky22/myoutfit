@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router';
 import Clothing from './Clothing';
 import Closet from './Closet';
-import { Button, StyledLink } from './style.js'
+import { Button, StyledLink } from './style/style'
 /**
  * UserHome will show:
  * 1. Outfit of the day

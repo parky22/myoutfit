@@ -1,17 +1,16 @@
-const React = require('react');
+import React from 'react';
 
 export default props => {
   return (
-    <footer className="page-footer">
-      <div className="container">
-        <div className="row">
-            <h5 className="center-align"><a className="white-text" href="https://github.com/parky22/myoutfit">Fork me on Github!</a></h5>
+    <footer>
+      <div>
+        <div>
+          <h5><a href="https://github.com/parky22/myoutfit">Fork me on Github!</a></h5>
         </div>
       </div>
-      <div className="footer-copyright">
-        <div className="container">
-          © 2014 Copyright Text
-            <a className="grey-text text-lighten-4 right" href="https://github.com/parky22">More Github Projects by Yoo-Nah</a>
+      <div>
+        <div>
+          <a href="https://github.com/parky22">More Github Projects by Yoo-Nah</a>
         </div>
       </div>
     </footer>

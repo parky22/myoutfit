@@ -1,25 +1,37 @@
 import styled from 'styled-components';
 import { Link } from 'react-router';
 
+/*
+  Color Scheme:
+  Pale Gold: #C0B283
+  Silk: #DCD0C0
+  Paper: #F4F4F4
+  Charcoal: #373737
+*/
+
 export const Button = styled.button`
-  background: ${props => props.primary ? 'palevioletred' : 'white'};
-  color: ${props => props.primary ? 'white' : 'palevioletred'};
+  background: ${props => props.primary ? '#DCD0C0' : '#F4F4F4'};
+  color: ${props => props.primary ? '#F4F4F4' : '#DCD0C0'};
   font-size: 1em;
   margin: 1em;
   padding: 0.25em 1em;
-  border: 2px solid palevioletred;
+  border: 2px solid #DCD0C0;
   border-radius: 3px;
 
   &:hover {
-    background: lightblue;
+    background: #C0B283;
   }
 `;
+
+// export const ChildrenWrapper = styled.div`
+
+// `
 
 export const Input = styled.input`
   font-size: 1.25em;
   padding: 0.5em;
   margin: 0.5em;
-  color: palevioletred;
+  color: #DCD0C0;
   background: papayawhip;
   border: none;
   border-radius: 3px;
@@ -29,24 +41,9 @@ export const Input = styled.input`
   }
 `;
 
-export const Nav = styled.nav`
-  background: papayawhip;
-`
-
-// export const NavA = styled.a`
-//   display: block;
-//   width: 60px;
-// `
-
-export const NavUl = styled.ul`
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-`
-
 // weird bug where primary doesn't make text white
 export const StyledLink = styled(Link)`
-  color: ${props => props.primary ? 'white' : 'palevioletred'};
+  color: ${props => props.primary ? '#F4F4F4' : '#DCD0C0'};
   display: block;
   margin: 0.5em 0;
 `

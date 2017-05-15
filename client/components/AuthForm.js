@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Input } from './style';
+import { Button, Input } from './style/style';
 
 export default props => {
 

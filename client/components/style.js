@@ -15,18 +15,12 @@ export const Button = styled.button`
   }
 `;
 
-// weird bug where primary doesn't make text white
-export const StyledLink = styled(Link)`
-  color: ${props => props.primary ? 'white' : 'palevioletred'};
-  display: block;
-  margin: 0.5em 0;
-`
 export const Input = styled.input`
   font-size: 1.25em;
   padding: 0.5em;
   margin: 0.5em;
-  color: purple;
-  background: red;
+  color: palevioletred;
+  background: papayawhip;
   border: none;
   border-radius: 3px;
 
@@ -34,3 +28,25 @@ export const Input = styled.input`
     box-shadow: inset 1px 1px 2px rgba(0,0,0,0.1);
   }
 `;
+
+export const Nav = styled.nav`
+  background: papayawhip;
+`
+
+// export const NavA = styled.a`
+//   display: block;
+//   width: 60px;
+// `
+
+export const NavUl = styled.ul`
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+`
+
+// weird bug where primary doesn't make text white
+export const StyledLink = styled(Link)`
+  color: ${props => props.primary ? 'white' : 'palevioletred'};
+  display: block;
+  margin: 0.5em 0;
+`

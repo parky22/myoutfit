@@ -1,12 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router';
+import { Nav, NavUl, NavA } from './style';
 
 export default props => {
   return (
-    <nav>
-      <div className="nav-wrapper">
+    <Nav>
+      <div>
           <Link to="/home" className="brand-logo">MYOUTFIT</Link>
-          <ul id="nav-mobile" className="right hide-on-med-and-down">
+          <NavUl id="nav-mobile" className="right hide-on-med-and-down">
             {
               props.loggedIn ?
               <div>
@@ -20,8 +21,8 @@ export default props => {
                   <li><Link to="/signup">SIGNUP</Link></li>
                 </div>
             }
-          </ul>
+          </NavUl>
         </div>
-    </nav>
+    </Nav>
   )
 };

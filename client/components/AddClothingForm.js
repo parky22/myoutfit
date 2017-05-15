@@ -30,11 +30,11 @@ class AddClothingForm extends React.Component {
 
   render() {
     return (
-      <div className="row">
+      <div>
         <h3> Add Clothing Form </h3>
-        <form className="col s12">
-          <div className="row">
-            <div className="input-field col s12">
+        <form>
+          <div>
+            <div>
               <input
                 name="name"
                 type="text"
@@ -43,7 +43,7 @@ class AddClothingForm extends React.Component {
                 onChange={this.handleChange} />
               <label>Clothing Name</label>
             </div>
-            <div className="input-field col s12">
+            <div>
               <select
               name="type"
               value={this.state.type}
@@ -54,15 +54,15 @@ class AddClothingForm extends React.Component {
               </select>
               <label>Type of Clothing</label>
             </div>
-            <div className="input-field col s12">
+            <div>
               <input type="text" className="validate" />
               <label>Colors</label>
             </div>
-            <div className="input-field col s12">
+            <div>
               <input type="text" className="validate" />
               <label>Image</label>
             </div>
-            <div className="input-field col s12">
+            <div>
               <input type="text" className="validate" />
               <label>Tags</label>
             </div>

@@ -6,18 +6,18 @@ export default props => {
   const { name, displayName, handleSubmit, error } = props;
 
   return (
-    <div className="row">
-      <form onSubmit={handleSubmit} name={name} className="col s12">
-        <div className="row">
-          <div className="col s12">
+    <div>
+      <form onSubmit={handleSubmit} name={name}>
+        <div>
+          <div>
             <label htmlFor="email"><small>Email</small></label>
-            <Input placeholder="email" name="email" type="text" />
+            <Input name="email" type="text" />
           </div>
         </div>
-        <div className="row">
-          <div className="col s12">
+        <div>
+          <div>
             <label htmlFor="password"><small>Password</small></label>
-            <Input placeholder="password" name="password" type="password" />
+            <Input name="password" type="password" />
           </div>
         </div>
         <div>

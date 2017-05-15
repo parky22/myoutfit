@@ -11,7 +11,7 @@ const Main = props => {
   const loggedIn = !!user.id;
 
   return (
-    <div className="container">
+    <div>
       <NavBar loggedIn={loggedIn} handleClick={handleClick} />
       {children}
       <Footer />

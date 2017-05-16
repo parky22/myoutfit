@@ -25,7 +25,8 @@ export const Button = styled.button`
 
 export const ChildrenWrapper = styled.div`
   background: #373737;
-  float: left;
+  float: right;
+  width: 80%;
 `
 
 export const Input = styled.input`
@@ -42,19 +43,25 @@ export const Input = styled.input`
   }
 `;
 
+export const Header = styled.h1`
+  background: lightblue;
+  font-family: Courier New;
+  text-align: center;
+`
+
 export const StyledA = styled.a`
-  color: #F4F4F4;
+  color: #373737;
 `;
 
 // weird bug where primary doesn't make text white
 export const StyledLink = styled(Link)`
-  color: ${props => props.primary ? '#F4F4F4' : '#DCD0C0'};
+  color: #F4F4F4;
   display: block;
   margin: 0.5em 0;
 `;
 
 export const Wrapper = styled.div`
   background: gray;
-  height: 100%;
-  width: 100%;
-`
+  width: 90%;
+  margin: 0 auto;
+`;

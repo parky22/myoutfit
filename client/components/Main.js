@@ -4,7 +4,7 @@ import { Link } from 'react-router';
 import { logout } from '../reducer/user';
 import NavBar from './NavBar';
 import Footer from './Footer';
-import { ChildrenWrapper, Wrapper } from './style/style'
+import { ChildrenWrapper, Header, StyledLink, Wrapper } from './style/style'
 
 
 const Main = props => {
@@ -14,6 +14,7 @@ const Main = props => {
 
   return (
     <Wrapper>
+      <Header><StyledLink to="/home">myoutfit</StyledLink></Header>
       <NavBar loggedIn={loggedIn} handleClick={handleClick} />
       <ChildrenWrapper>
         {children}

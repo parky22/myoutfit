@@ -1,15 +1,11 @@
 import styled from 'styled-components';
 import { Link } from 'react-router';
 
-export const Logo = styled.h1`
-  font-family: Courier New;
-`
-
 export const Nav = styled.nav`
   background: #C0B283;
   opacity: 0.75;
   float: left;
-  width: 200px;
+  width: 20%;
 `;
 
 export const NavLink = styled(Link)`

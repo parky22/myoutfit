@@ -11,9 +11,10 @@ class AddClothingForm extends React.Component {
       image: '',
       tags: ''
     }
+    // this.handleChange = this.handleChange.bind(this);
   }
 
-  handleChange(e) {
+  handleChange=(e) => {
     const target = e.target
     const value = target.value;
     const name = target.name;

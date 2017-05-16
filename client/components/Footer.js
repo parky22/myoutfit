@@ -6,10 +6,10 @@ export default props => {
   return (
     <FooterWrapper>
       <div>
-        <FooterLink href="https://github.com/parky22/myoutfit">Fork me on Github!</FooterLink>
+        <FooterLink href="https://github.com/parky22/myoutfit">fork me on github!</FooterLink>
       </div>
       <div>
-        <FooterLink href="https://github.com/parky22">More Github Projects by Yoo-Nah</FooterLink>
+        <FooterLink href="https://github.com/parky22">more github projects by yoo-nah</FooterLink>
       </div>
     </FooterWrapper>
   );

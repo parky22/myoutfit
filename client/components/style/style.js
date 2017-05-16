@@ -12,6 +12,7 @@ import { Link } from 'react-router';
 export const Button = styled.button`
   background: ${props => props.primary ? '#DCD0C0' : '#F4F4F4'};
   color: ${props => props.primary ? '#F4F4F4' : '#DCD0C0'};
+  font-family: Courier New;
   font-size: 1em;
   margin: 1em;
   padding: 0.25em 1em;
@@ -24,10 +25,10 @@ export const Button = styled.button`
 `;
 
 export const ChildrenWrapper = styled.div`
-  background: #DCD0C0;
+  background: #F4F4F4;
   float: right;
-  width: 80%;
-`
+  width: 78%;
+`;
 
 export const Input = styled.input`
   font-size: 1.25em;
@@ -49,7 +50,7 @@ export const StyledA = styled.a`
 
 // weird bug where primary doesn't make text white
 export const StyledLink = styled(Link)`
-  color: #F4F4F4;
+  color: '#DCD0C0';
   display: block;
   margin: 0.5em 0;
 `;

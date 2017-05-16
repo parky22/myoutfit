@@ -1,8 +1,9 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import Clothing from './Clothing';
 
-export default props => {
-
+const Closet = props => {
+  console.log("PROPS ALL CLOTHINGS", props.allClothings);
   return (
     <div>
       {
@@ -17,3 +18,8 @@ export default props => {
   );
 };
 
+const mapStateToProps = (state) => ({
+    allClothings: state.allClothings
+});
+
+export default connect(mapStateToProps)(Closet);

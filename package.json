@@ -9,7 +9,8 @@
     "seed": "node server/db/seed.js",
     "start": "webpack & nodemon server",
     "start-server": "nodemon server",
-    "test": "mocha --compilers js:babel-register --watch server/**/*test.js client/**/*.test.js"
+    "test-browser": "mocha --compilers js:babel-register --watch client/**/*.test.js",
+    "test-server": "mocha --watch server/**/*test.js"
   },
   "author": "",
   "license": "MIT",

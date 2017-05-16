@@ -10,7 +10,10 @@ const receiveAllClothings = allClothings => ({ type: RECEIVE_ALL_CLOTHINGS, allC
 export const getAllClothings = () => {
   return dispatch =>
     axios.get('/api/clothing')
-      .then(res => res.data)
+      .then(res => {
+        console.log("GOT TO RES");
+        return res.data
+      })
       .then(allClothings => {
         console.log('GOT ALL THE CLOTHES', allClothings);
         dispatch(receiveAllClothings(allClothings));

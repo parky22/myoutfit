@@ -24,7 +24,7 @@ const requireLogin = (nextRouterState, replace, next) =>
     })
     .catch(err => console.log(err));
 
-const closetEnter = props => {
+const closetEnter = () => {
   store.dispatch(getAllClothings);
 }
 
@@ -33,12 +33,12 @@ ReactDOM.render(
     <Router history={browserHistory}>
       <Route path="/" component={Main}>
         <IndexRoute component={Login} />
-        <Route path="login" component={Login} />
-        <Route path="signup" component={Signup} />
-        <Route path="addClothing" component={AddClothingForm} />
-        <Route path="closet" component={Closet} onEnter={closetEnter} />
+        <Route path="/login" component={Login} />
+        <Route path="/signup" component={Signup} />
         <Route onEnter={requireLogin}>
-          <Route path="home" component={UserHome} />
+          <Route path="/home" component={UserHome} />
+          <Route path="/closet" component={Closet} onEnter={closetEnter} />
+          <Route path="/addClothing" component={AddClothingForm} />
         </Route>
       </Route>
     </Router>

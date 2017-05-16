@@ -5,7 +5,7 @@ export const Logo = styled.h1`
   font-family: Courier New;
 `
 
-export const Nav = styled.div`
+export const Nav = styled.nav`
   background: #C0B283;
   opacity: 0.75;
   float: left;

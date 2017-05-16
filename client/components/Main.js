@@ -4,6 +4,7 @@ import { Link } from 'react-router';
 import { logout } from '../reducer/user';
 import NavBar from './NavBar';
 import Footer from './Footer';
+import { ChildrenWrapper, Wrapper } from './style/style'
 
 
 const Main = props => {
@@ -12,13 +13,13 @@ const Main = props => {
   const loggedIn = !!user.id;
 
   return (
-    <div>
+    <Wrapper>
       <NavBar loggedIn={loggedIn} handleClick={handleClick} />
-      <div>
+      <ChildrenWrapper>
         {children}
-      </div>
+      </ChildrenWrapper>
       <Footer />
-    </div>
+    </Wrapper>
   );
 };
 

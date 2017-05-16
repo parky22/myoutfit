@@ -1,19 +1,20 @@
 import React from 'react';
-import { StyledFooter } from './style/footerStyle'
+import { FooterWrapper } from './style/footerStyle';
+import {  Button, StyledA } from './style/style';
 
 export default props => {
   return (
-    <StyledFooter>
+    <FooterWrapper>
       <div>
         <div>
-          <h5><a href="https://github.com/parky22/myoutfit">Fork me on Github!</a></h5>
+          <Button><StyledA href="https://github.com/parky22/myoutfit">Fork me on Github!</StyledA></Button>
         </div>
       </div>
       <div>
         <div>
-          <a href="https://github.com/parky22">More Github Projects by Yoo-Nah</a>
+          <Button><StyledA href="https://github.com/parky22">More Github Projects by Yoo-Nah</StyledA></Button>
         </div>
       </div>
-    </StyledFooter>
+    </FooterWrapper>
   );
 };

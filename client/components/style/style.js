@@ -24,7 +24,7 @@ export const Button = styled.button`
 `;
 
 export const ChildrenWrapper = styled.div`
-  background: #373737;
+  background: #DCD0C0;
   float: right;
   width: 80%;
 `
@@ -43,12 +43,6 @@ export const Input = styled.input`
   }
 `;
 
-export const Header = styled.h1`
-  background: lightblue;
-  font-family: Courier New;
-  text-align: center;
-`
-
 export const StyledA = styled.a`
   color: #373737;
 `;
@@ -61,7 +55,7 @@ export const StyledLink = styled(Link)`
 `;
 
 export const Wrapper = styled.div`
-  background: gray;
+  background: #F4F4F4;
   width: 90%;
-  margin: 0 auto;
+  margin: auto;
 `;

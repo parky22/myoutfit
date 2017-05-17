@@ -1,12 +1,15 @@
 import React from 'react';
+import { Description, Img, PieceLabel, Tags } from './style/clothingStyle';
 
 export default props => {
 
   return (
     <div>
-      <h3>{props.piece.clothingType}</h3>
-      <img src={props.piece.image} />
-      <h3> {props.piece.tags.join(', ')} </h3>
+      <PieceLabel>{props.piece.clothingType}</PieceLabel>
+      <Img src={props.piece.image} />
+      <Description>
+        <Tags> {props.piece.tags.join(', ')} </Tags>
+      </Description>
     </div>
   );
 };

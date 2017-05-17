@@ -14,9 +14,17 @@ const dummyShirt = {
   tags: ['casual', 'light']
 };
 
+const dummyNoImage = {
+  clothingType: 'other',
+  color: ['pink'],
+  image: 'http://img.sheinside.com/images/sheinside.com/201310/1381733774262442938.jpg',
+  tags: ['casual', 'warm']
+};
+
 const seedClothes = () => db.Promise.map([
   dummyPants,
-  dummyShirt
+  dummyShirt,
+  dummyNoImage
 ], clothing => db.model('clothing').create(clothing));
 
 db.sync({force: true})

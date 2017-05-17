@@ -1,7 +1,7 @@
 import React from 'react';
 import { expect } from 'chai';
 import { shallow } from 'enzyme';
-import sinon from 'sinon'; // for spy calls?
+import sinon from 'sinon';
 
 import { UserHome } from './UserHome';
 import { Outfit } from './Outfit';

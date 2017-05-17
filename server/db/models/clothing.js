@@ -18,8 +18,7 @@ module.exports = db.define('clothing', {
   },
 
   image: {
-    type: Sequelize.STRING,
-    allowNull: false
+    type: Sequelize.STRING
   },
 
   tags: {

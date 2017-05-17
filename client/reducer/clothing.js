@@ -8,17 +8,13 @@ const receiveAllClothings = allClothings => ({ type: RECEIVE_ALL_CLOTHINGS, allC
 
 // THUNK ACTION CREATORS
 export const getAllClothings = () => {
-  return dispatch =>
-    axios.get('/api/clothing')
-      .then(res => {
-        console.log("GOT TO RES");
-        return res.data
-      })
-      .then(allClothings => {
-        console.log('GOT ALL THE CLOTHES', allClothings);
-        dispatch(receiveAllClothings(allClothings));
-      })
-      .catch(error => console.error(error));
+  return dispatch => {
+    return axios.get('/api/clothing')
+    .then(result => {
+      dispatch(receiveAllClothings(result.data));
+    })
+    .catch(err => console.error(err));
+  }
 };
 
 // REDUCER

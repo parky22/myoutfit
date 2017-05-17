@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import Clothing from './Clothing';
 
 const Closet = props => {
-  console.log("PROPS ALL CLOTHINGS", props.allClothings);
   return (
     <div>
       {

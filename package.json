@@ -7,7 +7,7 @@
     "build-client": "webpack",
     "build-watch": "webpack -w",
     "seed": "node server/db/seed.js",
-    "start": "webpack & nodemon server",
+    "start": "webpack -w & nodemon server",
     "start-server": "nodemon server",
     "test-browser": "mocha --compilers js:babel-register --watch client/**/*.test.js",
     "test-server": "mocha --watch server/**/*test.js"

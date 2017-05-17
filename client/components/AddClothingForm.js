@@ -14,7 +14,7 @@ class AddClothingForm extends React.Component {
     }
   }
 
-  handleChange=(e)=> {
+  handleChange = (e) => {
     const target = e.target
     const value = target.value;
     const name = target.name;
@@ -47,9 +47,9 @@ class AddClothingForm extends React.Component {
             <row>
               <label htmlFor="type">type of clothing</label>
               <select
-              name="type"
-              value={this.state.type}
-              onChange={this.handleChange}>
+                name="type"
+                value={this.state.type}
+                onChange={this.handleChange}>
                 <option value="shirt">shirt</option>
                 <option value="pants">pants</option>
                 <option value="other">other</option>
@@ -67,9 +67,11 @@ class AddClothingForm extends React.Component {
               <label>tags</label>
               <Input type="text" className="validate" />
             </row>
-            <Button type="submit" onSubmit={this.handleSubmit}>
-              submit
-          </Button>
+            <row>
+              <Button type="submit" onSubmit={this.handleSubmit}>
+                submit
+              </Button>
+            </row>
           </div>
         </form>
       </div>

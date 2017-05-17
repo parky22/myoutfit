@@ -9,9 +9,7 @@ import { me } from './reducer/user';
 import { getAllClothings } from './reducer/clothing';
 
 // Components
-import { Main, Login, Signup, UserHome } from './components';
-import AddClothingForm from './components/AddClothingForm';
-import Closet from './components/Closet';
+import { Main, Login, Signup, UserHome, AddClothingForm, Closet } from './components';
 
 const whoAmI = store.dispatch(me());
 
@@ -25,7 +23,7 @@ const requireLogin = (nextRouterState, replace, next) =>
     .catch(err => console.log(err));
 
 const closetEnter = () => {
-  store.dispatch(getAllClothings);
+  store.dispatch(getAllClothings());
 }
 
 ReactDOM.render(

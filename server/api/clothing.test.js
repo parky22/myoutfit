@@ -1,5 +1,5 @@
 const request = require('supertest');
-const { expect } = require('chai');
+const expect = require('chai').expect;
 const db = require('../db');
 const Clothing = db.model('clothing');
 const User = db.model('user');

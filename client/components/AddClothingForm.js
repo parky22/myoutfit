@@ -1,20 +1,21 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { Button, Input } from './style/mainS
+tyle';
 
 class AddClothingForm extends React.Component {
   constructor() {
     super();
     this.state = {
       name: '',
-      type: 'Choose a type',
+      type: 'shirt',
       color: '',
       image: '',
       tags: ''
     }
-    // this.handleChange = this.handleChange.bind(this);
   }
 
-  handleChange=(e) => {
+  handleChange=(e)=> {
     const target = e.target
     const value = target.value;
     const name = target.name;
@@ -32,44 +33,44 @@ class AddClothingForm extends React.Component {
   render() {
     return (
       <div>
-        <h3> Add Clothing Form </h3>
+        <h3> add a piece </h3>
         <form>
           <div>
-            <div>
-              <input
+            <row>
+              <label htmlFor="name">clothing name</label>
+              <Input
                 name="name"
                 type="text"
                 className="validate"
                 value={this.state.name}
                 onChange={this.handleChange} />
-              <label>Clothing Name</label>
-            </div>
-            <div>
+            </row>
+            <row>
+              <label htmlFor="type">type of clothing</label>
               <select
               name="type"
               value={this.state.type}
               onChange={this.handleChange}>
-                <option value="shirt">Shirt</option>
-                <option value="pants">Pants</option>
-                <option value="other">Other</option>
+                <option value="shirt">shirt</option>
+                <option value="pants">pants</option>
+                <option value="other">other</option>
               </select>
-              <label>Type of Clothing</label>
-            </div>
-            <div>
-              <input type="text" className="validate" />
-              <label>Colors</label>
-            </div>
-            <div>
-              <input type="text" className="validate" />
-              <label>Image</label>
-            </div>
-            <div>
-              <input type="text" className="validate" />
-              <label>Tags</label>
-            </div>
-            <button type="submit" onSubmit={this.handleSubmit}>
-              Submit
-          </button>
+            </row>
+            <row>
+              <label htmlFor="colors">colors</label>
+              <Input name="colors" type="text" className="validate" />
+            </row>
+            <row>
+              <label>image</label>
+              <Input type="text" className="validate" />
+            </row>
+            <row>
+              <label>tags</label>
+              <Input type="text" className="validate" />
+            </row>
+            <Button type="submit" onSubmit={this.handleSubmit}>
+              submit
+          </Button>
           </div>
         </form>
       </div>

@@ -4,7 +4,7 @@ import { Link } from 'react-router';
 import { logout } from '../reducer/user';
 import NavBar from './NavBar';
 import Footer from './Footer';
-import { ChildrenWrapper, StyledLink, Wrapper } from './style/style'
+import { ChildrenWrapper, StyledLink, Wrapper } from './style/mainStyle'
 import { Header, HeaderLink } from './style/headerStyle';
 
 

@@ -1,7 +1,6 @@
 import React from 'react';
 import { FooterWrapper, FooterLink } from './style/footerStyle';
-import { Button, StyledA } from './style/mainS
-tyle';
+import { Button, StyledA } from './style/mainStyle';
 
 export default props => {
   return (

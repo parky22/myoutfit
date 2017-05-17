@@ -12,8 +12,13 @@ const dummyUser = {
 }
 
 describe('<UserHome />', () => {
+  const wrapper = shallow(<UserHome user={dummyUser} />);
+
   it('renders <Outfit /> component', () => {
-    const wrapper = shallow(<UserHome user={dummyUser} />);
     expect(wrapper.contains(<Outfit />)).to.equal(true);
+  });
+
+  it('renders a greeting for user', () => {
+    expect(wrapper.contains(<h3>Welcome, {dummyUser.email}</h3>)).to.equal(true);
   });
 });

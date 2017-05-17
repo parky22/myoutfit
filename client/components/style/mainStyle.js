@@ -1,13 +1,11 @@
 import styled from 'styled-components';
 import { Link } from 'react-router';
 
-/*
-  Color Scheme:
-  Pale Gold: #C0B283
-  Silk: #DCD0C0
-  Paper: #F4F4F4
-  Charcoal: #373737
-*/
+// Color Scheme
+// palegold: '#C0B283';
+// silk: '#DCD0C0';
+// paper: '#F4F4F4';
+// charcoal: '#373737';
 
 export const Button = styled.button`
   background: ${props => props.primary ? '#DCD0C0' : '#F4F4F4'};
@@ -50,7 +48,7 @@ export const StyledA = styled.a`
 
 // weird bug where primary doesn't make text white
 export const StyledLink = styled(Link)`
-  color: '#DCD0C0';
+  color: #DCD0C0;
   display: block;
   margin: 0.5em 0;
 `;

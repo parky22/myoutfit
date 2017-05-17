@@ -1,6 +1,5 @@
 import React from 'react';
-import { Button, Input } from './style/mainS
-tyle';
+import { Button, Input } from './style/mainStyle';
 
 export default props => {
 

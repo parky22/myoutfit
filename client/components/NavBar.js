@@ -1,13 +1,10 @@
 import React from 'react';
-import { Link } from 'react-router';
 import { Nav, NavUl, NavLink } from './style/navStyle';
-import { Header } from './style/mainS
-tyle';
 
 export default props => {
   return (
     <Nav>
-      <NavUl id="nav-mobile" className="right hide-on-med-and-down">
+      <NavUl>
         {
           props.loggedIn ?
             <div>

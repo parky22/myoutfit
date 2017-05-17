@@ -1,7 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Button, Input } from './style/mainS
-tyle';
+import { Button, Input } from './style/mainStyle';
 
 class AddClothingForm extends React.Component {
   constructor() {

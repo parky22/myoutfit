@@ -4,6 +4,9 @@ import { Link } from 'react-router';
 import { logout } from '../reducer/user';
 import NavBar from './NavBar';
 import Footer from './Footer';
+import { ChildrenWrapper, StyledLink, Wrapper } from './style/mainStyle'
+import { Header, HeaderLink } from './style/headerStyle';
+
 
 const Main = props => {
 
@@ -11,11 +14,14 @@ const Main = props => {
   const loggedIn = !!user.id;
 
   return (
-    <div className="container">
+    <Wrapper>
+      <Header><HeaderLink to="/home">myoutfit</HeaderLink></Header>
       <NavBar loggedIn={loggedIn} handleClick={handleClick} />
-      {children}
+      <ChildrenWrapper>
+        {children}
+      </ChildrenWrapper>
       <Footer />
-    </div>
+    </Wrapper>
   );
 };
 

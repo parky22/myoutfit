@@ -1,26 +1,25 @@
 import React from 'react';
-import { Link } from 'react-router';
+import { Nav, NavUl, NavLink } from './style/navStyle';
 
 export default props => {
   return (
-    <nav>
-      <div className="nav-wrapper">
-        <Link to="/home" className="brand-logo">MYOUTFIT</Link>
-        <ul id="nav-mobile" className="right hide-on-med-and-down">
-          {
-            props.loggedIn ?
-            <span>
-              <li><a href="sass.html">HOME</a></li>
-              <li><a href="" onClick={props.handleClick}>LOGOUT</a></li>
-            </span>
+    <Nav>
+      <NavUl>
+        {
+          props.loggedIn ?
+            <div>
+              <li><NavLink to="/home">home</NavLink></li>
+              <li><NavLink to="/addClothing">add piece</NavLink></li>
+              <li><NavLink to="/closet">closet</NavLink></li>
+              <li><NavLink to="/" onClick={props.handleClick}>logout</NavLink></li>
+            </div>
             :
-            <span>
-              <li><Link to="/login">LOGIN</Link></li>
-              <li><Link to="/signup">SIGNUP</Link></li>
-            </span>
-          }
-        </ul>
-      </div>
-    </nav>
-      )
+            <div>
+              <li><NavLink to="/login">login</NavLink></li>
+              <li><NavLink to="/signup">signup</NavLink></li>
+            </div>
+        }
+      </NavUl>
+    </Nav>
+  )
 };

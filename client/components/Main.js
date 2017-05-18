@@ -7,7 +7,6 @@ import Footer from './Footer';
 import { ChildrenWrapper, StyledLink, Wrapper } from './style/mainStyle'
 import { Header, HeaderLink } from './style/headerStyle';
 
-
 const Main = props => {
 
   const { children, handleClick, user } = props;

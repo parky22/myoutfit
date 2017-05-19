@@ -1,9 +1,75 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { addClothing } from '../reducer/clothing'
 import { Button, Input } from './style/mainStyle';
 import { SmallHeader } from './style/headerStyle';
 
-class AddClothingForm extends React.Component {
+const AddClothingForm = props => {
+  const { handleChange, handleSubmit } = props;
+  const { name, type, color, image, tags } = props.state;
+
+  return (
+    <div>
+      <SmallHeader> add a piece </SmallHeader>
+      <form>
+        <row>
+          <label htmlFor="name">clothing name</label>
+          <Input
+            name="name"
+            type="text"
+            value={name}
+            onChange={handleChange} />
+        </row>
+        <row>
+          <label htmlFor="type">type of clothing</label>
+          <select
+            name="type"
+            value={type}
+            onChange={handleChange}>
+            <option value="shirt">shirt</option>
+            <option value="pants">pants</option>
+            <option value="other">other</option>
+          </select>
+        </row>
+        <row>
+          <label htmlFor="color">color(s)</label>
+          <Input
+            name="color"
+            type="text"
+            value={color}
+            onChange={handleChange} />
+        </row>
+        <row>
+          <label htmlFor="image">image</label>
+          <Input
+            name="image"
+            type="text"
+            value={image}
+            onChange={handleChange} />
+        </row>
+        <row>
+          <label htmlFor="tags">tags</label>
+          <Input
+            name="tags"
+            type="text"
+            value={tags}
+            onChange={handleChange} />
+        </row>
+        <row>
+          <Button type="submit" onSubmit={handleSubmit}>
+            submit
+            </Button>
+        </row>
+      </form>
+    </div>
+  );
+};
+
+const mapDispatchToProps = dispatch => ({
+  handleSubmit: dispatch(addClothing)
+})
+
+export default connect(null, mapDispatchToProps)(class extends React.Component {
   constructor() {
     super();
     this.state = {
@@ -27,66 +93,24 @@ class AddClothingForm extends React.Component {
 
   handleSubmit = e => {
     e.preventDefault();
-    console.log('Gotta handle submit better than this');
+    this.props.handleSubmit(this.state);
+    this.setState({
+      name: 'afterSubmit',
+      type: 'shirt',
+      color: '',
+      image: '',
+      tags: ''
+    })
   }
 
   render() {
     return (
-      <div>
-        <SmallHeader> add a piece </SmallHeader>
-        <form>
-          <row>
-            <label htmlFor="name">clothing name</label>
-            <Input
-              name="name"
-              type="text"
-              value={this.state.name}
-              onChange={this.handleChange} />
-          </row>
-          <row>
-            <label htmlFor="type">type of clothing</label>
-            <select
-              name="type"
-              value={this.state.type}
-              onChange={this.handleChange}>
-              <option value="shirt">shirt</option>
-              <option value="pants">pants</option>
-              <option value="other">other</option>
-            </select>
-          </row>
-          <row>
-            <label htmlFor="color">color(s)</label>
-            <Input
-              name="color"
-              type="text"
-              value={this.state.color}
-              onChange={this.handleChange} />
-          </row>
-          <row>
-            <label htmlFor="image">image</label>
-            <Input
-              name="image"
-              type="text"
-              value={this.state.image}
-              onChange={this.handleChange} />
-          </row>
-          <row>
-            <label htmlFor="tags">tags</label>
-            <Input
-              name="tags"
-              type="text"
-              value={this.state.tags}
-              onChange={this.handleChange} />
-          </row>
-          <row>
-            <Button type="submit" onSubmit={this.handleSubmit}>
-              submit
-            </Button>
-          </row>
-        </form>
-      </div>
+      <AddClothingForm
+        handleChange={this.handleChange}
+        handleSubmit={this.handleSubmit}
+        state={this.state}
+      />
     );
   }
-}
+})
 
-export default connect()(AddClothingForm);

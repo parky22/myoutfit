@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
 import user from './user';
-import allClothings from './clothing';
+import clothings from './clothing';
 
-export default combineReducers({ user, allClothings });
+export default combineReducers({ user, clothings });

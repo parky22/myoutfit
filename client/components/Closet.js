@@ -19,8 +19,8 @@ const Closet = props => {
   );
 };
 
-const mapStateToProps = (state) => ({
-    allClothings: state.allClothings
+const mapStateToProps = state => ({
+    allClothings: state.clothings.allClothings
 });
 
 export default connect(mapStateToProps)(Closet);

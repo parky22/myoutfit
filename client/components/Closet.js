@@ -1,10 +1,12 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import Clothing from './Clothing';
+import { SmallHeader } from './style/headerStyle';
 
 const Closet = props => {
   return (
     <div>
+      <SmallHeader>closet</SmallHeader>
       {
         props.allClothings ?
         props.allClothings.map(piece => {
@@ -17,8 +19,8 @@ const Closet = props => {
   );
 };
 
-const mapStateToProps = (state) => ({
-    allClothings: state.allClothings
+const mapStateToProps = state => ({
+    allClothings: state.clothings.allClothings
 });
 
 export default connect(mapStateToProps)(Closet);

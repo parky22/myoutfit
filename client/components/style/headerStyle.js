@@ -10,3 +10,8 @@ export const Header = styled.h1`
 export const HeaderLink = styled(Link)`
   color: #373737;
 `;
+
+export const SmallHeader = styled.h2`
+  color: #DCD0C0;
+  margin: 1em auto;
+`;

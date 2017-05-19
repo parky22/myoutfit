@@ -25,6 +25,7 @@ export const Button = styled.button`
 export const ChildrenWrapper = styled.div`
   background: #F4F4F4;
   float: right;
+  margin-bottom: 5%;
   width: 78%;
 `;
 

@@ -4,6 +4,7 @@ export const Description = styled.div`
   display: inline-block;
   height: 250px;
   width: 250px;
+  margin-left: 5%;
 `
 
 export const Img = styled.img`

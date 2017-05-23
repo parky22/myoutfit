@@ -2,7 +2,10 @@
   "name": "myoutfit",
   "version": "1.0.0",
   "description": "Figure out what to wear for the day!",
-  "main": "index.js",
+  "main": "server/index.js",
+  "engines": {
+    "node": ">= 7.0.0"
+  },
   "scripts": {
     "postinstall": "webpack",
     "seed": "node server/db/seed.js",

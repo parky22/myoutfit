@@ -25,9 +25,11 @@
     "body-parser": "^1.16.1",
     "babel-register": "^6.24.1",
     "connect-session-sequelize": "^4.1.0",
+    "css-loader": "^0.26.1",
     "express": "^4.14.1",
     "express-session": "^1.15.1",
     "morgan": "^1.8.1",
+    "node-sass": "^4.5.0",
     "passport": "^0.3.2",
     "passport-google-oauth": "^1.0.0",
     "pg": "^6.1.2",
@@ -39,20 +41,18 @@
     "redux": "^3.6.0",
     "redux-logger": "^2.8.1",
     "redux-thunk": "^2.2.0",
+    "sass-loader": "^6.0.0",
     "sequelize": "^3.30.2",
     "styled-components": "^1.4.6",
+    "style-loader": "^0.13.1",
     "webpack": "^2.2.1"
   },
   "devDependencies": {
     "chai": "^3.5.0",
-    "css-loader": "^0.26.1",
     "enzyme": "^2.8.2",
     "mocha": "^3.2.0",
-    "node-sass": "^4.5.0",
     "react-addons-test-utils": "^15.5.1",
-    "sass-loader": "^6.0.0",
     "sinon": "^2.2.0",
-    "style-loader": "^0.13.1",
     "supertest": "^3.0.0"
   }
 }

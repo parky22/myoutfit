@@ -4,7 +4,7 @@
   "description": "Figure out what to wear for the day!",
   "main": "index.js",
   "scripts": {
-    "postinstall": "npm run node_modules/webpack/bin/webpack.js",
+    "postinstall": "webpack",
     "seed": "node server/db/seed.js",
     "start": "webpack -w & nodemon server",
     "start-server": "nodemon server",

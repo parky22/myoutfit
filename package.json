@@ -7,9 +7,8 @@
     "node": ">= 7.0.0"
   },
   "scripts": {
-    "postinstall": "webpack install && webpack",
     "seed": "node server/db/seed.js",
-    "start": "node server",
+    "start": "webpack && node server",
     "start-dev": "webpack -w & nodemon server",
     "test-browser": "mocha --compilers js:babel-register --watch client/**/*.test.js",
     "test-server": "mocha --watch server/**/*test.js"

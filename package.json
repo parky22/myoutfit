@@ -7,7 +7,7 @@
     "node": ">= 7.0.0"
   },
   "scripts": {
-    "postinstall": "webpack",
+    "postinstall": "npm run node_modules/webpack/bin/webpack.js",
     "seed": "node server/db/seed.js",
     "start": "webpack -w & nodemon server",
     "start-server": "nodemon server",

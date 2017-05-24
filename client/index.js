@@ -6,7 +6,7 @@ import { Provider } from 'react-redux';
 import { Router, Route, browserHistory, IndexRoute } from 'react-router';
 import store from './store';
 import { me } from './reducer/user';
-import { getAllClothings } from './reducer/clothing';
+import { getAllClothings, getOutfit } from './reducer/clothing';
 
 // Components
 import { Main, Login, Signup, UserHome, AddClothingForm, Closet } from './components';
@@ -26,6 +26,10 @@ const closetEnter = () => {
   store.dispatch(getAllClothings());
 }
 
+const userHomeEnter = () => {
+  store.dispatch(getOutfit());
+}
+
 ReactDOM.render(
   <Provider store={store}>
     <Router history={browserHistory}>
@@ -34,7 +38,7 @@ ReactDOM.render(
         <Route path="/login" component={Login} />
         <Route path="/signup" component={Signup} />
         <Route onEnter={requireLogin}>
-          <Route path="/home" component={UserHome} />
+          <Route path="/home" component={UserHome} onEnter={userHomeEnter} />
           <Route path="/closet" component={Closet} onEnter={closetEnter} />
           <Route path="/addClothing" component={AddClothingForm} />
         </Route>

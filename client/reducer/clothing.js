@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { browserHistory } from 'react-router';
 
 // CONSTANTS
 const RECEIVE_ALL_CLOTHINGS = 'RECEIVE_ALL_CLOTHINGS';
@@ -8,6 +9,7 @@ const SELECTED_CLOTHING = 'SELECTED_CLOTHING';
 // ACTION CREATORS
 const receiveAllClothings = allClothings => ({ type: RECEIVE_ALL_CLOTHINGS, allClothings });
 const createdClothing = madeClothing => ({ type: CREATED_CLOTHING, madeClothing });
+const selectedClothing = selectedClothing => ({ type: SELECTED_CLOTHING, selectedClothing});
 
 // THUNK ACTION CREATORS
 export const getAllClothings = () => {
@@ -27,8 +29,19 @@ export const addClothing = clothesToAdd => {
     .then(result => result.data)
     .then (madeClothing => {
       dispatch(createdClothing(madeClothing));
+      //browserHistory.push(`/piece/${madeClothing.id}`)
     })
     .catch(err => console.error(err));
+  }
+}
+
+export const selectedPiece = pieceId => {
+  return dispatch => {
+    return axios.get(`api/clothing/${pieceId}`)
+      .then(result => result.data)
+      .then(foundPiece => {
+        dispatch(selectedClothing(foundPiece));
+      });
   }
 }
 

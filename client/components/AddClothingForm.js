@@ -66,8 +66,10 @@ const AddClothingForm = props => {
 };
 
 const mapDispatchToProps = dispatch => ({
-  handleSubmit: dispatch(addClothing)
-})
+  handleSubmit (clothing) {
+    dispatch(addClothing(clothing));
+  }
+});
 
 export default connect(null, mapDispatchToProps)(class extends React.Component {
   constructor() {
@@ -100,7 +102,7 @@ export default connect(null, mapDispatchToProps)(class extends React.Component {
       color: '',
       image: '',
       tags: ''
-    })
+    });
   }
 
   render() {
@@ -112,5 +114,5 @@ export default connect(null, mapDispatchToProps)(class extends React.Component {
       />
     );
   }
-})
+});
 

@@ -6,10 +6,10 @@ import { Provider } from 'react-redux';
 import { Router, Route, browserHistory, IndexRoute } from 'react-router';
 import store from './store';
 import { me } from './reducer/user';
-import { getAllClothings } from './reducer/clothing';
+import { getAllClothings, selectedPiece } from './reducer/clothing';
 
 // Components
-import { Main, Login, Signup, UserHome, AddClothingForm, Closet } from './components';
+import { Main, Login, Signup, UserHome, AddClothingForm, Closet, Clothing } from './components';
 
 const whoAmI = store.dispatch(me());
 
@@ -26,6 +26,12 @@ const closetEnter = () => {
   store.dispatch(getAllClothings());
 }
 
+const clothingEnter = nextRouterState => {
+  console.log("PROPS", props);
+  const pieceId = nextRouterState.params.pieceId;
+  store.dispatch(selectedPiece(pieceId));
+}
+
 ReactDOM.render(
   <Provider store={store}>
     <Router history={browserHistory}>
@@ -36,6 +42,7 @@ ReactDOM.render(
         <Route onEnter={requireLogin}>
           <Route path="/home" component={UserHome} />
           <Route path="/closet" component={Closet} onEnter={closetEnter} />
+          <Route path="/piece/:pieceId" component={Clothing} onEnter={clothingEnter} />
           <Route path="/addClothing" component={AddClothingForm} />
         </Route>
       </Route>

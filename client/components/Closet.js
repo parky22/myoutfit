@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import Clothing from './Clothing';
+import { Clothing } from './Clothing';
 import { SmallHeader } from './style/headerStyle';
 
 const Closet = props => {

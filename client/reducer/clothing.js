@@ -4,10 +4,12 @@ import axios from 'axios';
 const RECEIVE_ALL_CLOTHINGS = 'RECEIVE_ALL_CLOTHINGS';
 const CREATED_CLOTHING = 'CREATED_CLOTHING';
 const SELECTED_CLOTHING = 'SELECTED_CLOTHING';
+const RECEIVE_OUTFIT = 'RECEIVE_OUTFIT';
 
 // ACTION CREATORS
 const receiveAllClothings = allClothings => ({ type: RECEIVE_ALL_CLOTHINGS, allClothings });
 const createdClothing = madeClothing => ({ type: CREATED_CLOTHING, madeClothing });
+const receiveOutfit = outfit => ({ type: RECEIVE_OUTFIT, outfit });
 
 // THUNK ACTION CREATORS
 export const getAllClothings = () => {
@@ -32,11 +34,26 @@ export const addClothing = clothesToAdd => {
   }
 }
 
+export const getOutfit = () => {
+  return dispatch => {
+    return axios.get('/api/clothing')
+      .then(result => result.data)
+      .then(clothings => {
+        const outfit = clothings.filter((clothing) => {
+          return clothing.clothingType === 'pants' || clothing.clothingType === 'other'
+        });
+        dispatch(receiveOutfit(outfit));
+      })
+
+  }
+}
+
 // REDUCER
 const initialClothingState = {
   allClothings: [],
   madeClothing: {},
-  selectedClothing: {}
+  selectedClothing: {},
+  outfit: []
 }
 
 export default function (state = initialClothingState, action) {
@@ -51,6 +68,10 @@ export default function (state = initialClothingState, action) {
       break;
     case SELECTED_CLOTHING:
       newState.selectedClothing = action.selectedClothing;
+      break;
+    case RECEIVE_OUTFIT:
+      newState.outfit = action.outfit;
+      break;
     default:
       return state;
   }

@@ -50,7 +50,7 @@ describe('/api/clothing', () => {
         )
     });
 
-  it('GET all clothings', () => {
+  it('GETS all clothings', () => {
     return request(app)
       .get('/api/clothing')
       .expect(200)
@@ -59,7 +59,7 @@ describe('/api/clothing', () => {
       });
   });
 
-  it('GET clothing by ID', () => {
+  it('GETS clothing by ID', () => {
     return request(app)
       .get(`/api/clothing/${pantsId}`)
       .expect(200)
@@ -71,7 +71,7 @@ describe('/api/clothing', () => {
       });
   });
 
-  it('POST a piece of clothing', () => {
+  it('POSTS a piece of clothing', () => {
     return request(app)
       .post('/api/clothing')
       .send(newShirt)
@@ -88,13 +88,16 @@ describe('/api/clothing', () => {
       });
   });
 
-  //   it('UPDATE a piece of clothing', () => {
-  //     return request(app)
-  //     .put(`/api/clothing/${shirtId}`)
-  //     .send({ tags: ['cool'] })
-  //     .expect(200)
-  //     .then(res => expect(res.body).to.equal())
-  //   });
+    it('UPDATES a piece of clothing', () => {
+      return request(app)
+      .put(`/api/clothing/${shirtId}`)
+      .send({ tags: ['cool'] })
+      .expect(200)
+      .then(res => {
+        const updatedPiece = res.body[1][0];
+        expect(updatedPiece.tags[0]).to.equal('cool')
+      })
+    });
 
 
 });

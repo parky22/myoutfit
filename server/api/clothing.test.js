@@ -67,7 +67,7 @@ describe('/api/clothing', () => {
         expect(res.body.clothingType).to.equal(pants.clothingType);
         expect(res.body.color[0]).to.equal(pants.color[0]);
         expect(res.body.image).to.equal(pants.image);
-        expect(res.body.tags.length).to.equal(pants.tags.length);
+        expect(res.body.tags).to.equal(pants.tags.join(', '));
       });
   });
 
@@ -80,7 +80,7 @@ describe('/api/clothing', () => {
         expect(res.body.clothingType).to.equal(newShirt.clothingType);
         expect(res.body.color[0]).to.equal(newShirt.color[0]);
         expect(res.body.image).to.equal(newShirt.image);
-        expect(res.body.tags.length).to.equal(newShirt.tags.length);
+        expect(res.body.tags).to.equal(newShirt.tags.join(', '));
       })
       .then(() => {
         Clothing.findAll()
@@ -95,7 +95,8 @@ describe('/api/clothing', () => {
       .expect(200)
       .then(res => {
         const updatedPiece = res.body[1][0];
-        expect(updatedPiece.tags[0]).to.equal('cool')
+        console.log('RES', res.body);
+        expect(updatedPiece.tags).to.equal('casual, light, cool');
       })
     });
 

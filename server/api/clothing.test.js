@@ -95,7 +95,6 @@ describe('/api/clothing', () => {
       .expect(200)
       .then(res => {
         const updatedPiece = res.body[1][0];
-        console.log('RES', res.body);
         expect(updatedPiece.tags).to.equal('casual, light, cool');
       })
     });

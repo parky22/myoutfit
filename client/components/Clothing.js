@@ -8,7 +8,7 @@ export default props => {
       <PieceLabel>{props.piece.clothingType}</PieceLabel>
       <Img src={props.piece.image} />
       <Description>
-        <Tags> {props.piece.tags.join(', ')} </Tags>
+        <Tags> {props.piece.tags} </Tags>
       </Description>
     </div>
   );

@@ -28,14 +28,12 @@ const dummyPants = {
   tags: ['cute', 'floral', 'spring', 'casual']
 }
 
-const seedClothes = function () {
-  return db.Promise.map([
+const seedClothes = () => db.Promise.map([
     dummyShirt,
     dummySweater,
     dummyShirt2,
     dummyPants
-  ], clothing => db.model('clothing').create(clothing))
-};
+  ], clothing => db.model('clothing').create(clothing));
 
 db.sync({ force: true })
   .then(seedClothes)

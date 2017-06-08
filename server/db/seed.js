@@ -28,16 +28,16 @@ const dummyPants = {
   tags: ['cute', 'floral', 'spring', 'casual']
 }
 
+const seedClothes = function () {
+  return db.Promise.map([
+    dummyShirt,
+    dummySweater,
+    dummyShirt2,
+    dummyPants
+  ], clothing => db.model('clothing').create(clothing))
+};
 
-
-const seedClothes = () => db.Promise.map([
-  dummyShirt,
-  dummySweater,
-  dummyShirt2,
-  dummyPants
-], clothing => db.model('clothing').create(clothing));
-
-db.sync({force: true})
+db.sync({ force: true })
   .then(seedClothes)
   .then(clothings => console.log(`Seeded ${clothings.length} clothings!`))
   .catch(error => console.error(error))

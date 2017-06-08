@@ -34,7 +34,7 @@ const seedClothes = () => db.Promise.map([
   dummyShirt,
   dummySweater,
   dummyShirt2,
-  dummyPants,
+  dummyPants
 ], clothing => db.model('clothing').create(clothing));
 
 db.sync({force: true})

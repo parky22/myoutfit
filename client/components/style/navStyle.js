@@ -1,8 +1,9 @@
 import styled from 'styled-components';
 import { Link } from 'react-router';
+import * as colors from './colors';
 
 export const Nav = styled.nav`
-  background: #C0B283;
+  background: ${colors.palegold};
   opacity: 0.75;
   float: left;
   width: 20%;
@@ -12,10 +13,10 @@ export const NavLink = styled(Link)`
   display: block;
   padding: 8px 16px;
   text-decoration: none;
-  color: #F4F4F4;
+  color: ${colors.paper};
 
   &:hover {
-    background-color: #373737;
+    background-color: ${colors.charcoal};
   }
 `;
 

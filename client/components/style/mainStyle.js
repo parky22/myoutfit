@@ -1,29 +1,24 @@
 import styled from 'styled-components';
 import { Link } from 'react-router';
-
-// Color Scheme
-// palegold: '#C0B283';
-// silk: '#DCD0C0';
-// paper: '#F4F4F4';
-// charcoal: '#373737';
+import * as colors from './colors';
 
 export const Button = styled.button`
-  background: ${props => props.primary ? '#DCD0C0' : '#F4F4F4'};
-  color: ${props => props.primary ? '#F4F4F4' : '#DCD0C0'};
+  background: ${props => props.primary ? colors.silk : colors.paper};
+  color: ${props => props.primary ? colors.paper : colors.silk};
   font-family: Courier New;
   font-size: 1em;
   margin: 1em;
   padding: 0.25em 1em;
-  border: 2px solid #DCD0C0;
+  border: 2px solid ${colors.silk};
   border-radius: 3px;
 
   &:hover {
-    background: #C0B283;
+    background: ${colors.palegold};
   }
 `;
 
 export const ChildrenWrapper = styled.div`
-  background: #F4F4F4;
+  background: ${colors.paper};
   float: right;
   margin-bottom: 5%;
   width: 78%;
@@ -33,7 +28,7 @@ export const Input = styled.input`
   font-size: 1.25em;
   padding: 0.5em;
   margin: 0.5em;
-  color: #DCD0C0;
+  color: ${colors.silk};
   background: papayawhip;
   border: none;
   border-radius: 3px;
@@ -44,18 +39,18 @@ export const Input = styled.input`
 `;
 
 export const StyledA = styled.a`
-  color: #373737;
+  color: ${colors.charcoal};
 `;
 
 // weird bug where primary doesn't make text white
 export const StyledLink = styled(Link)`
-  color: #DCD0C0;
+  color: ${colors.silk};
   display: block;
   margin: 0.5em 0;
 `;
 
 export const Wrapper = styled.div`
-  background: #F4F4F4;
+  background: ${colors.paper};
   width: 90%;
   margin: auto;
 `;

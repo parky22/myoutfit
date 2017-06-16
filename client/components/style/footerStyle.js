@@ -1,9 +1,10 @@
 import styled from 'styled-components';
 import { Link } from 'react-router';
+import * as colors from './colors';
 
 
 export const FooterWrapper = styled.footer`
-  background: #373737;
+  background: ${colors.charcoal};
   bottom: 0;
   clear: both;
   opacity: 0.5;
@@ -15,7 +16,7 @@ export const FooterLink = styled(Link) `
   padding: 8px 16px;
   text-align: center;
   text-decoration: none;
-  color: #F4F4F4;
+  color: ${colors.paper};
 
   &:hover {
     background-color: pink;

@@ -1,17 +1,18 @@
 import styled from 'styled-components';
 import { Link } from 'react-router';
+import * as colors from './colors';
 
 export const Header = styled.h1`
-  background: #F4F4F4;
+  background: ${colors.paper};
   text-align: center;
   margin: 25px 0px 0px 0px;
 `;
 
 export const HeaderLink = styled(Link)`
-  color: #373737;
+  color: ${colors.charcoal};
 `;
 
 export const SmallHeader = styled.h2`
-  color: #DCD0C0;
+  color: ${colors.silk};
   margin: 1em auto;
 `;

@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import * as colors from './colors';
 
 export const Description = styled.div`
   display: inline-block;
@@ -12,17 +13,17 @@ export const Img = styled.img`
   float: left;
   height: 250px;
   width: 250px;
-  border: 3px solid #C0B283;
+  border: 3px solid ${colors.palegold};
   border-radius: 5px;
 `;
 
 export const PieceLabel = styled.h3`
-  background: #373737;
-  color: #F4F4F4;
+  background: ${colors.charcoal};
+  color: ${colors.paper};
   opacity: 0.7;
   padding: auto 1em;
 `;
 
 export const Tags = styled.h5`
-  color: #DCD0C0;
+  color: ${colors.silk};
 `;

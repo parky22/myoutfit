@@ -22,7 +22,10 @@ module.exports = db.define('clothing', {
   },
 
   tags: {
-    type: Sequelize.ARRAY(Sequelize.STRING)
+    type: Sequelize.ARRAY(Sequelize.STRING),
+    get () {
+      return this.getDataValue('tags').join(', ');
+    }
   }
 }, {
   classMethods: {
@@ -39,5 +42,11 @@ module.exports = db.define('clothing', {
         }
       });
     }
-  }
+  },
+  // hooks: {
+  //   beforeUpdate (piece) {
+  //     piece.tags = ['HEYOOO'];
+  //     console.log("PIECE", piece);
+  //   }
+  // }
 });

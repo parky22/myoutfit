@@ -1,11 +1,9 @@
 import React from 'react';
 import { expect } from 'chai';
 import { shallow } from 'enzyme';
-import sinon from 'sinon';
 
 import { UserHome } from './UserHome';
-import { Outfit } from './Outfit';
-import { Button } from './style/mainStyle';
+import Outfit from './Outfit';
 
 const dummyUser = {
   email: 'test@email.com'
@@ -18,7 +16,4 @@ describe('<UserHome />', () => {
     expect(wrapper.contains(<Outfit />)).to.equal(true);
   });
 
-  it('renders a greeting for user', () => {
-    expect(wrapper.contains(<h3>Welcome, {dummyUser.email}</h3>)).to.equal(true);
-  });
 });

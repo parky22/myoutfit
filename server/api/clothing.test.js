@@ -50,7 +50,7 @@ describe('/api/clothing', () => {
         )
     });
 
-  it('GET all clothings', () => {
+  it('GETS all clothings', () => {
     return request(app)
       .get('/api/clothing')
       .expect(200)
@@ -59,7 +59,7 @@ describe('/api/clothing', () => {
       });
   });
 
-  it('GET clothing by ID', () => {
+  it('GETS clothing by ID', () => {
     return request(app)
       .get(`/api/clothing/${pantsId}`)
       .expect(200)
@@ -67,11 +67,11 @@ describe('/api/clothing', () => {
         expect(res.body.clothingType).to.equal(pants.clothingType);
         expect(res.body.color[0]).to.equal(pants.color[0]);
         expect(res.body.image).to.equal(pants.image);
-        expect(res.body.tags.length).to.equal(pants.tags.length);
+        expect(res.body.tags).to.equal(pants.tags.join(', '));
       });
   });
 
-  it('POST a piece of clothing', () => {
+  it('POSTS a piece of clothing', () => {
     return request(app)
       .post('/api/clothing')
       .send(newShirt)
@@ -80,7 +80,7 @@ describe('/api/clothing', () => {
         expect(res.body.clothingType).to.equal(newShirt.clothingType);
         expect(res.body.color[0]).to.equal(newShirt.color[0]);
         expect(res.body.image).to.equal(newShirt.image);
-        expect(res.body.tags.length).to.equal(newShirt.tags.length);
+        expect(res.body.tags).to.equal(newShirt.tags.join(', '));
       })
       .then(() => {
         Clothing.findAll()
@@ -88,13 +88,16 @@ describe('/api/clothing', () => {
       });
   });
 
-  //   it('UPDATE a piece of clothing', () => {
-  //     return request(app)
-  //     .put(`/api/clothing/${shirtId}`)
-  //     .send({ tags: ['cool'] })
-  //     .expect(200)
-  //     .then(res => expect(res.body).to.equal())
-  //   });
+    it('UPDATES a piece of clothing', () => {
+      return request(app)
+      .put(`/api/clothing/${shirtId}`)
+      .send({ tags: ['cool'] })
+      .expect(200)
+      .then(res => {
+        const updatedPiece = res.body[1][0];
+        expect(updatedPiece.tags).to.equal('cool');
+      })
+    });
 
 
 });

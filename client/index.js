@@ -9,7 +9,7 @@ import { me } from './reducer/user';
 import { getAllClothings } from './reducer/clothing';
 
 // Components
-import { Main, Login, Signup, UserHome, AddClothingForm, Closet, Landing } from './components';
+import { Main, UserHome, AddClothingForm, Closet, Landing } from './components';
 
 const whoAmI = store.dispatch(me());
 
@@ -32,8 +32,6 @@ ReactDOM.render(
       <Route path="/" component={Main}>
         <IndexRoute component={Landing} />
         <Route path="/landing" component={Landing} />
-        <Route path="/login" component={Login} />
-        <Route path="/signup" component={Signup} />
         <Route onEnter={requireLogin}>
           <Route path="/home" component={UserHome} />
           <Route path="/closet" component={Closet} onEnter={closetEnter} />

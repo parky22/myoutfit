@@ -9,13 +9,13 @@ import { Header, HeaderLink } from './style/headerStyle';
 
 const Main = props => {
 
-  const { children, handleClick, user } = props;
+  const { children, handleLogout, user } = props;
   const loggedIn = !!user.id;
 
   return (
     <Wrapper>
       <Header><HeaderLink to="/landing">myoutfit</HeaderLink></Header>
-      <NavBar loggedIn={loggedIn} handleClick={handleClick} />
+      <NavBar loggedIn={loggedIn} handleLogout={handleLogout} />
       <ChildrenWrapper>
         {children}
       </ChildrenWrapper>
@@ -27,7 +27,7 @@ const Main = props => {
 const mapState = ({ user }) => ({ user });
 
 const mapDispatch = dispatch => ({
-  handleClick() {
+  handleLogout() {
     dispatch(logout());
   }
 });

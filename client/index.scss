@@ -1,8 +1,13 @@
+$palegold: #C0B283;
+$silk: #DCD0C0;
+$paper: #F4F4F4;
+$charcoal: #373737;
+
 body {
   font-family: Courier New;
   margin: 0;
   padding: 0;
-  background: #F4F4F4;
+  background: $paper;
 
   a {
     text-decoration: none;
@@ -10,6 +15,16 @@ body {
 
   label {
     display: block;
+  }
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+      float: left;
+    }
   }
 
   nav a {

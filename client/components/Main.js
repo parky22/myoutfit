@@ -14,7 +14,7 @@ const Main = props => {
 
   return (
     <Wrapper>
-      <Header><HeaderLink to="/home">myoutfit</HeaderLink></Header>
+      <Header><HeaderLink to="/landing">myoutfit</HeaderLink></Header>
       <NavBar loggedIn={loggedIn} handleClick={handleClick} />
       <ChildrenWrapper>
         {children}

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
 export const LandingImg = styled.img`
-  width: 200px;
-  height: 300px;
-`
+  width: 300px;
+  height: 450px;
+`;

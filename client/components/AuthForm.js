@@ -26,6 +26,7 @@ export default props => {
         {error && <div> {error.response.data} </div>}
       </form>
       <Button><a href="/auth/google">{displayName} with Google</a></Button>
+      <img src="/images/manrep1.gif" />
     </div>
   );
 };

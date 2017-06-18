@@ -6,14 +6,13 @@ import sinon from 'sinon';
 import NavBar from './NavBar';
 import { Nav, NavUl, NavLink } from './style/navStyle';
 
-
 describe('<NavBar />', () => {
 
   it('renders "login" and "signup" tabs when logged out', () => {
-    const wrapper = shallow(<NavBar loggedIn={false} />);
+    const wrapper = mount(<NavBar loggedIn={false} />);
 
-    expect(wrapper.contains(<NavLink to="/login">login</NavLink>)).to.equal(true);
-    expect(wrapper.contains(<NavLink to="/signup">signup</NavLink>)).to.equal(true);
+    expect(wrapper.contains(<NavLink onClick={this.onLoginClick}>login</NavLink>)).to.equal(true);
+    expect(wrapper.contains(<NavLink onClick={this.onSignupClick}>signup</NavLink>)).to.equal(true);
     expect(wrapper.find(NavLink)).to.have.length(2);
   });
 

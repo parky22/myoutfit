@@ -14,3 +14,5 @@ Node.js, Express, and PostgreSQL on the backend.
 2. testing:
   *frontend testing: `npm run test-browser`
   *backend testing: `npm run test-server`
+
+3. Check out the issues! I have many...

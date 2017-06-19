@@ -17,7 +17,6 @@ describe('<NavBar />', () => {
   });
 
   it('renders <Login /> component when "login" is clicked', () => {
-    //const onLoginClick = sinon.spy();
     root.find('#login').simulate('click');
 
     expect(root.contains(<Login />)).to.equal(true);

@@ -41,8 +41,8 @@ export default class NavBar extends React.Component {
               </div>
               :
               <div>
-                <li><NavLink onClick={this.onLoginClick}>login</NavLink></li>
-                <li><NavLink onClick={this.onSignupClick}>signup</NavLink></li>
+                <li><NavLink id="login" onClick={this.onLoginClick}>login</NavLink></li>
+                <li><NavLink id="signup" onClick={this.onSignupClick}>signup</NavLink></li>
                 {
                   this.state.loginClicked && <Login />
                 }

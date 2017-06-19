@@ -12,7 +12,7 @@ Node.js, Express, and PostgreSQL on the backend.
 1. starting the server: `npm run start-dev`
 
 2. testing:
-  *frontend testing: `npm run test-browser`
-  *backend testing: `npm run test-server`
+  * frontend testing: `npm run test-browser`
+  * backend testing: `npm run test-server`
 
 3. Check out the issues! I have many...

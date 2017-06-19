@@ -2,7 +2,7 @@
 
 [myoutfit deployed with Heroku](https://my-outfit.herokuapp.com/)
 
-An app that picks an outfit for you because.
+An app that picks an outfit for you when you need a little inspiration.
 
 React, Redux, and styled components on the frontend.
 

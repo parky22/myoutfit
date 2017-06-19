@@ -11,7 +11,7 @@
     "seed": "node server/db/seed.js",
     "start": "node server",
     "start-dev": "webpack -w & nodemon server",
-    "test-browser": "mocha .setup.js --compilers js:babel-register --watch client/**/*.test.js",
+    "test-browser": "mocha --compilers js:babel-register --watch .setup.js client/**/*.test.js",
     "test-server": "mocha --watch server/**/*test.js",
     "test": "mocha --compilers js:babel-register client/**/*.test.js server/**/*test.js"
   },

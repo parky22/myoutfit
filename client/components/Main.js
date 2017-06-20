@@ -15,7 +15,7 @@ const Main = props => {
   return (
     <Wrapper>
       <Header><HeaderLink to="/landing">myoutfit</HeaderLink></Header>
-      <NavBar loggedIn={loggedIn} handleLogout={handleLogout} />
+      <NavBar loggedIn={loggedIn} handleLogout={handleLogout} user={user}/>
       <ChildrenWrapper>
         {children}
       </ChildrenWrapper>

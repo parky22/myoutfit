@@ -22,5 +22,5 @@ export const NavLink = styled(Link)`
 `;
 
 export const NavUl = styled.ul`
-  width: 200px;
+  width: 90%;
 `;

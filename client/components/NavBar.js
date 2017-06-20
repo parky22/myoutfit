@@ -26,7 +26,7 @@ export default class NavBar extends React.Component {
   }
 
   render() {
-    const { loggedIn, handleLogout } = this.props;
+    const { loggedIn, handleLogout, user } = this.props;
 
     return (
       <Nav>

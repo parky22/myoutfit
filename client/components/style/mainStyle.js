@@ -25,9 +25,9 @@ export const ChildrenWrapper = styled.div`
 `;
 
 export const Input = styled.input`
-  font-size: 1.25em;
-  padding: 0.5em;
-  margin: 0.5em;
+  font-size: 1em;
+  padding: 3%;
+  margin: 1%;
   color: ${colors.silk};
   background: papayawhip;
   border: none;

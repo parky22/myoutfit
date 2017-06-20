@@ -5,6 +5,7 @@ import * as colors from './colors';
 export const Nav = styled.nav`
   background: ${colors.palegold};
   opacity: 0.75;
+  padding: 1%;
   float: left;
   width: 20%;
 `;
@@ -21,5 +22,5 @@ export const NavLink = styled(Link)`
 `;
 
 export const NavUl = styled.ul`
-  width: 200px;
+  width: 90%;
 `;

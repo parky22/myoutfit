@@ -12,21 +12,21 @@ export default class NavBar extends React.Component {
   }
 
   onLoginClick = () => {
-    if(this.state.signupClicked) {
-      this.setState({signupClicked: false});
-    }
+    // make sure only login renders
+    if(this.state.signupClicked) this.setState({signupClicked: false});
+
     this.setState({loginClicked: !this.state.loginClicked});
   }
 
   onSignupClick = () => {
-    if(this.state.loginClicked) {
-      this.setState({loginClicked: false});
-    }
+    // make sure only signup renders
+    if(this.state.loginClicked) this.setState({loginClicked: false});
+
     this.setState({signupClicked: !this.state.signupClicked});
   }
 
   render() {
-    const { loggedIn, handleLogout } = this.props;
+    const { loggedIn, handleLogout, user } = this.props;
 
     return (
       <Nav>

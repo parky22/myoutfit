@@ -7,8 +7,8 @@ export const Button = styled.button`
   color: ${props => props.primary ? colors.paper : colors.silk};
   font-family: Courier New;
   font-size: 1em;
-  margin: 1em;
-  padding: 0.25em 1em;
+  margin: 3%;
+  padding: 3%;
   border: 2px solid ${colors.silk};
   border-radius: 3px;
 
@@ -21,17 +21,18 @@ export const ChildrenWrapper = styled.div`
   background: ${colors.paper};
   float: right;
   margin-bottom: 5%;
-  width: 78%;
+  width: 77%;
 `;
 
 export const Input = styled.input`
-  font-size: 1.25em;
-  padding: 0.5em;
-  margin: 0.5em;
+  font-size: 1em;
+  padding: 3%;
+  margin: 1%;
   color: ${colors.silk};
   background: papayawhip;
   border: none;
   border-radius: 3px;
+  width: 100%;
 
   &:hover {
     box-shadow: inset 1px 1px 2px rgba(0,0,0,0.1);

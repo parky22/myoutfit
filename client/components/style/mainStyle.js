@@ -8,7 +8,7 @@ export const Button = styled.button`
   font-family: Courier New;
   font-size: 1em;
   margin: 3%;
-  padding: 0.25em;
+  padding: 3%;
   border: 2px solid ${colors.silk};
   border-radius: 3px;
 
